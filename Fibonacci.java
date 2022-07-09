@@ -15,9 +15,26 @@ public class Fibonacci {
         return n2;
     }
 
+    // using Recursion 
+    private static int fibRecursion(int n) {
+        if (n == 0 || n == 1) return 1;
+        return fibRecursion(n-1) + fibRecursion(n-2);
+    }
+
+    private static int fibDPMemo(int n, int[] dp) {
+        if (n <= 1) {
+            dp[n] = 1;
+            return dp[n];
+        }
+        if (dp[n] == -1) return dp[n];
+        dp[n] = fibDPMemo(n-1, dp) + fibDPMemo(n-2, dp);
+        return dp[n];
+    }
+
     public static void main(String[] args) {
         var n = sc.nextInt();
         var answer = fib1(n);
+        var answer2 = fibRecursion(n);
         System.out.println(answer);
     }
 }

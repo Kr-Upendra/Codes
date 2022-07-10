@@ -44,7 +44,7 @@ public class Fibonacci {
     }
 
     public static void main(String[] args) {
-        var n = 10 ;//sc.nextInt();
+        var n = sc.nextInt();
         int[] dp = new int[n+1];
         var answer = fib1(n);
         var answer2 = fibRecursion(n);
